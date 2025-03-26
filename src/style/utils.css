@@ -1,0 +1,16 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --main-background-color: #fafafa;
+  --main-text-color: #000;
+
+  /* dark mode */
+
+  --main-background-color-dark: #353535;
+  --main-text-color-dark: #fff;
+}
+
+@utility container {
+  max-width: 1440px;
+  padding: 0 50px;
+}

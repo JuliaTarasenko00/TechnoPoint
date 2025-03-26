@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "./utils.css";
+
+html.dark body {
+  background-color: var(--main-background-color-dark);
+  color: var(--main-text-color-dark);
+}
+
+body {
+  margin: 0;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+  transition: background-color ease-out 500ms, color ease-in-out 400ms;
+}
