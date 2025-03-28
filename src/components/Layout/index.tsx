@@ -31,7 +31,7 @@ export default function Layout() {
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      metaTheme?.setAttribute("content", "#ffffff");
+      metaTheme?.setAttribute("content", "#fafafa");
       localStorage.removeItem("theme");
     }
   };
