@@ -1,18 +1,22 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { patch } from "./helpers/routers";
+import { path } from "./helpers/routers";
 
 const Root = lazy(() => import("./components/Layout/index"));
 const Home = lazy(() => import("./pages/Home/index"));
 const About = lazy(() => import("./pages/About/index"));
+const Wishlist = lazy(() => import("./pages/Wishlist/index"));
+const BasketCart = lazy(() => import("./pages/BasketCart/index"));
 
 const router = createBrowserRouter([
   {
-    path: patch.home,
+    path: path.home,
     Component: Root,
     children: [
       { index: true, Component: Home },
-      { path: patch.about, Component: About },
+      { path: path.about, Component: About },
+      { path: path.wishlist, Component: Wishlist },
+      { path: path.cart, Component: BasketCart },
     ],
   },
 ]);

@@ -1,72 +1,39 @@
-import { Suspense, useEffect, useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
-import { patch } from "../../helpers/routers";
+import { Suspense } from "react";
+import { Link, Outlet } from "react-router-dom";
+
 import { LuSun } from "react-icons/lu";
 import { HiOutlineMoon } from "react-icons/hi";
-import { SearchForm } from "./SearchForm";
 import { AiOutlineAppstoreAdd } from "react-icons/ai";
 
-const metaTheme: Element | null = document.querySelector(
-  'meta[name="theme-color"]'
-);
+import { useChangeTheme } from "../../helpers/context/theme/useChangeTheme";
+import { path } from "../../helpers/routers";
+import { SearchForm } from "./SearchForm";
+import { Navigation } from "./Navigation";
 
 export default function Layout() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setDarkMode(true);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const isDark = !darkMode;
-    setDarkMode(isDark);
-
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      metaTheme?.setAttribute("content", "#353535");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      metaTheme?.setAttribute("content", "#fafafa");
-      localStorage.removeItem("theme");
-    }
-  };
+  const { toggleTheme, darkMode } = useChangeTheme();
 
   return (
     <>
-      <header className=" py-[18px]">
-        <div className="container px-[160px] flex justify-between items-center">
-          <Link to={patch.home} className="text-[18px] font-bold">
+      <header className=" pt-[25px] pb-[15px]">
+        <div className="container px-[130px] flex justify-between items-center">
+          <Link
+            to={path.home}
+            className="text-[25px] text-[var(--main-text-color)] font-bold dark:text-[var(--logo-color-dark)]"
+          >
             TechnoPoint
           </Link>
-          <p className=" flex items-center gap-[4px]">
+          <p className=" text-[var(--main-text-color)] text-[18px] dark:text-[var(--main-text-color-dark)] flex items-center gap-[4px]">
             <span>
               <AiOutlineAppstoreAdd />
-            </span>{" "}
+            </span>
             Catalog
           </p>
           <SearchForm />
-          <nav className=" flex gap-[52px]">
-            <NavLink
-              to={patch.home}
-              className=" opacity-[0.3] text-[16px] text-[var(--main-text-color)] dark:opacity-[1] dark:text-[var(--main-text-color-dark)]"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to={patch.about}
-              className=" opacity-[0.3] text-[16px] text-[var(--main-text-color)] dark:opacity-[1] dark:text-[var(--main-text-color-dark)]"
-            >
-              About
-            </NavLink>
-          </nav>
+          <Navigation />
           <button
             type="button"
-            className=" cursor-pointer w-[20px] h-[20px] overflow-hidden relative"
+            className=" hover:scale-[1.5] transition-transform duration-[350ms] cursor-pointer w-[24px] h-[24px] overflow-hidden relative"
             onClick={toggleTheme}
           >
             <span
@@ -93,7 +60,7 @@ export default function Layout() {
           <Outlet />
         </Suspense>
       </main>
-      <footer></footer>
+      <footer className="py-[40px]"></footer>
     </>
   );
 }
