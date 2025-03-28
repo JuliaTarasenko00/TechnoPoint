@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#ffffff" id="theme-color-meta" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechnoPoint</title>
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="">
+      let colorScheme = "dark";
+      if (colorScheme === "system") {
+        let media = window.matchMedia("(prefers-color-scheme: dark)");
+        if (media.matches) document.documentElement.classList.add("dark");
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
