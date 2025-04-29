@@ -41,23 +41,23 @@ export const Navigation = () => {
           className={({ isActive }) =>
             `${
               isActive ? "text-[#ff0051]" : "text-[var(--main-text-color)]"
-            }  transition-colors duration-[350ms] hover:text-[#ff0051] dark:text-[var(--main-text-color-dark)]`
+            } w-[24px] h-[24px] transition-colors duration-[350ms] hover:text-[#ff0051] dark:text-[var(--main-text-color-dark)]`
           }
         >
-          <IoIosHeartEmpty className=" w-[24px] h-[24px]" />
+          <IoIosHeartEmpty />
         </NavLink>
         <NavLink
           to={path.cart}
-          className="  hover:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]  dark:text-[var(--main-text-color-dark)]"
+          className="  hover:scale-[1.5] w-[24px] h-[24px] transition-transform duration-[350ms] text-[var(--main-text-color)]  dark:text-[var(--main-text-color-dark)]"
         >
-          <PiShoppingCartLight className=" w-[24px] h-[24px]" />
+          <PiShoppingCartLight />
         </NavLink>
       </nav>
       <button
         type="button"
-        className="  hover:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]  dark:text-[var(--main-text-color-dark)]"
+        className=" w-[24px] h-[24px]  hover:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]  dark:text-[var(--main-text-color-dark)]"
       >
-        <GoPerson className=" w-[24px] h-[24px]" />
+        <GoPerson />
       </button>
     </>
   );

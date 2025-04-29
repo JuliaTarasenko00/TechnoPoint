@@ -3,7 +3,7 @@ import { Controller, useForm } from "react-hook-form";
 import { RiSearchLine } from "react-icons/ri";
 import { FiX } from "react-icons/fi";
 
-import { TextInput } from "../ui/inputs/TextInput";
+import { SearchInput } from "../ui/inputs/SearchInput";
 
 const defaultValues = {
   text: "",
@@ -30,11 +30,7 @@ export const SearchForm = () => {
         name="text"
         control={control}
         render={({ field }) => (
-          <TextInput
-            {...field}
-            errorMessage={errors.text?.message}
-            placeholder="Search"
-          />
+          <SearchInput {...field} errorMessage={errors.text?.message} />
         )}
       />
       <button

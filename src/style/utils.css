@@ -1,7 +1,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --main-background-color: #fafafa;
+  --main-background-color: #fff;
   --main-text-color: #333333;
   --second-text-color: #fff;
   --nav-text-color: #666666;
@@ -16,7 +16,7 @@
   --main-text-color-dark: #e0e0e0;
   --logo-color-dark: #fff;
   --nav-text-color-dark: #c7c7c7;
-  --nav-text-color-active-dark: #f5c542;
+  --nav-text-color-active-dark: #c7c7c7;
 
   --search-input-bg-dark: #2c2c2c;
   --search-input-text-dark: #e0e0e0;

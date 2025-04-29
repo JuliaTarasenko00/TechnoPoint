@@ -1,8 +1,7 @@
-import { FC, ForwardedRef, forwardRef } from "react";
+import { FC, ForwardedRef, forwardRef, InputHTMLAttributes } from "react";
 
-interface TextInputProps {
+interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
-  placeholder?: string;
 }
 
 export const TextInput: FC<TextInputProps> = forwardRef(
@@ -12,7 +11,6 @@ export const TextInput: FC<TextInputProps> = forwardRef(
         <input
           {...rest}
           type="text"
-          placeholder={rest.placeholder}
           className=" py-[16px] text-[var(--search-input-text)] bg-[var(--search-input-bg)]  dark:bg-[var(--search-input-bg-dark)] dark:text-[var(--search-input-text-dark)] rounded-[8px] w-[372px] h-[56px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] px-[48px]"
           ref={_ref}
         />
