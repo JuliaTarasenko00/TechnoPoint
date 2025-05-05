@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import phone from "../../assets/image/hero_section_img.webp";
+import phone from "../../../assets/image/hero_section_img.webp";
 
 export const HeroSection = () => {
   const [isLoad, setIsLoad] = useState<boolean>(false);

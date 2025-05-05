@@ -1,6 +1,9 @@
-import { BrowseByCategory } from "../../components/BrowseByCategory";
-import { HeroSection } from "../../components/HeroMarkup";
-import { TechGallery } from "../../components/TechGallery";
+import { BrowseByCategory } from "../../components/HomeComponents/BrowseByCategory";
+import { DiscountedProducts } from "../../components/HomeComponents/DiscountedProducts";
+import { HeroSection } from "../../components/HomeComponents/HeroMarkup";
+import { PopularBrands } from "../../components/HomeComponents/PopularBrands";
+import { ProductCatalogPreview } from "../../components/HomeComponents/ProductCatalogPreview";
+import { TechGallery } from "../../components/HomeComponents/TechGallery";
 
 export default function Home() {
   return (
@@ -8,6 +11,9 @@ export default function Home() {
       <HeroSection />
       <TechGallery />
       <BrowseByCategory />
+      <ProductCatalogPreview />
+      <PopularBrands />
+      <DiscountedProducts />
     </>
   );
 }

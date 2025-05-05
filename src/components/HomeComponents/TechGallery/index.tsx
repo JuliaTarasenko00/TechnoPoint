@@ -1,7 +1,7 @@
 import {
   techInformation,
   TTechInformation,
-} from "../../helpers/temporaryData/techInformation";
+} from "../../../helpers/temporaryData/techInformation";
 
 type TStyleList = {
   style: string;
@@ -97,7 +97,7 @@ export const TechGallery: React.FC = () => {
                       {description}
                     </p>
                     {lastItem && (
-                      <button className="text-[#353535] mt-[16px] px-[56px] py-[16px] text-[16px] leading-[150%] border-1 rounded-[6px] font-medium border-[#353535] transition-color ease-in-out duration-500 cursor-pointer hover:bg-[#353535] hover:text-[#fff]">
+                      <button className="text-[#353535] mt-[16px] px-[56px] py-[16px] text-[16px] leading-[150%] border-1 rounded-[6px] font-medium border-[#353535] transition-color ease-in-out duration-500 cursor-pointer hover:bg-[#522b5b] hover:border-transparent hover:text-[#fff]">
                         Shop now
                       </button>
                     )}
