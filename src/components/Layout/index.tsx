@@ -9,13 +9,14 @@ import { useChangeTheme } from "../../helpers/context/theme/useChangeTheme";
 import { path } from "../../helpers/routers";
 import { SearchForm } from "./SearchForm";
 import { Navigation } from "./Navigation";
+import { Footer } from "../Footer/Footer";
 
 export default function Layout() {
   const { toggleTheme, darkMode } = useChangeTheme();
 
   return (
     <>
-      <header className=" pt-[25px] pb-[15px]">
+      <header className=" sticky z-50 shadow-[0px_-6px_32px_2px_rgba(0,0,0,0.4)] bg-[#fff] top-0 pt-[25px] pb-[15px]">
         <div className="container px-[130px] flex justify-between items-center">
           <Link
             to={path.home}
@@ -60,7 +61,9 @@ export default function Layout() {
           <Outlet />
         </Suspense>
       </main>
-      <footer className="py-[40px]"></footer>
+      <footer className=" bg-[#000] pb-[84px]">
+        <Footer />
+      </footer>
     </>
   );
 }

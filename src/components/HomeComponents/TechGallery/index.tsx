@@ -56,8 +56,8 @@ const techInformationWithStyle: TTechInformationWithStyle[] =
 
 export const TechGallery: React.FC = () => {
   return (
-    <section className="container mx-auto px-4 py-8">
-      <ul className="grid grid-rows-[2fr] gap-[20px] grid-cols-4 grid-flow-col">
+    <section className="container px-4 py-4">
+      <ul className="grid grid-rows-[2fr] gap-[10px] grid-cols-4 grid-flow-col">
         {techInformationWithStyle.map(
           (
             { name, img, description, style, styleImg, position, bg },
@@ -73,20 +73,20 @@ export const TechGallery: React.FC = () => {
             return (
               <li
                 key={name}
-                className={`${position} cursor-pointer group relative w-full min-h-[200px] `}
+                className={`${position}  cursor-pointer rounded-2xl group relative w-full shadow-md min-h-[220px] `}
               >
                 <div
-                  className={`${bg} absolute w-full rounded-2xl h-full group-hover:scale-[1.015] shadow-md  transition-transform duration-500`}
+                  className={`${bg} absolute w-full rounded-2xl h-full group-hover:scale-[1.015] transition-transform duration-500`}
                 ></div>
                 <div
-                  className={`relative z-10 w-full group h-full justify-end text-balance pointer-events-auto flex items-center px-[36px] overflow-hidden ${style}`}
+                  className={`relative z-10 w-full group h-full justify-end overflow-hidden text-balance flex items-center px-[36px] ${style}`}
                 >
                   <img
                     src={img}
                     alt={name}
                     width={260}
                     height={100}
-                    className={`absolute object-fill object-center group-hover:scale-[1.05] transition-transform duration-700 ${styleImg}`}
+                    className={`absolute object-fill object-center group-hover:scale-[1.05] pointer-events-none transition-transform duration-700 ${styleImg}`}
                   />
                   <div className="z-10 dark:text-white">
                     <h2 className=" leading-[87%] mb-[0.3em]">

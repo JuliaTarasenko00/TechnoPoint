@@ -30,8 +30,9 @@ export const HeroSection = () => {
             </p>
             <button
               type="button"
-              className=" cursor-pointer mt-[24px] text-[16px] rounded-[6px] leading-[150%] font-medium dark:text-[var(--main-text-color-dark)] dark:border-[( --main-text-color-dark)] text-[var(--second-text-color)] py-[16px] px-[56px] border-[1px] border-[#fff]  transition-all duration-500  hover:scale-[1.03]"
+              className=" relative group cursor-pointer mt-[24px] text-[16px]  leading-[150%] font-medium dark:text-[var(--main-text-color-dark)] text-[var(--second-text-color)] py-[16px] px-[56px]"
             >
+              <div className=" absolute top-0 left-0 w-full h-full transition-all duration-500 rounded-[6px] group-hover:scale-[1.03] border-[1px] border-[#fff]"></div>
               Shop Now
             </button>
           </div>
@@ -39,7 +40,7 @@ export const HeroSection = () => {
             src={phone}
             alt=""
             width={406}
-            className={`transition-all duration-2500 ease-out ${
+            className={`transition-all scale-[1.01] duration-2500 ease-out drop-shadow-[10px_10px_10px_#00000060] ${
               isLoad ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           />

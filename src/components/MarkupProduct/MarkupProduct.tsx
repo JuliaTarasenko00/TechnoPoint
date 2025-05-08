@@ -12,7 +12,7 @@ export const MarkupProduct: FC<MarkupProductProps> = ({ products }) => {
       {products.map(({ _id, name, img, price }) => (
         <li
           key={_id}
-          className=" shadow-md relative max-w-[268px] rounded-[9px] w-[268px] bg-[#f6f6f6] py-[24px] px-[16px] flex flex-col justify-center"
+          className=" shadow-md group relative max-w-[268px] rounded-[9px] w-[268px] bg-[#f6f6f6] py-[24px] px-[16px] flex flex-col justify-center"
         >
           <button
             type="button"
@@ -20,13 +20,13 @@ export const MarkupProduct: FC<MarkupProductProps> = ({ products }) => {
           >
             <IoIosHeartEmpty />
           </button>
-          <div className=" flex-[1] w-[160px] mb-[16px] h-[160px] place-self-center place-content-center">
+          <div className=" group flex-[1] w-[160px] mb-[16px] h-[160px] place-self-center place-content-center">
             <img
               src={img}
               alt={name}
               width={160}
               height={260}
-              className=" object-fill w-full"
+              className=" object-fill w-full group-hover:scale-[1.05] transition-transform duration-500"
             />
           </div>
           <div className=" text-center">
