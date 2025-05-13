@@ -48,7 +48,7 @@ export const SearchInput: FC<PropsSearchInput> = ({
         onFocus={() => {
           setIsActive(true);
         }}
-        className=" py-[16px] text-[var(--search-input-text)] bg-[var(--search-input-bg)]  dark:bg-[var(--search-input-bg-dark)] dark:text-[var(--search-input-text-dark)] rounded-[8px] w-[372px] h-[56px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] px-[48px]"
+        className=" py-[16px] text-[var(--search-input-text)] bg-[var(--search-input-bg)] rounded-[8px] w-[372px] h-[56px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] px-[48px]"
         ref={inputRef}
       />
       {errorMessage && <p>{errorMessage}</p>}

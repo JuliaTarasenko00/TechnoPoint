@@ -1,3 +1,4 @@
+import { MouseEvent } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import { IoIosHeartEmpty } from "react-icons/io";
@@ -8,6 +9,11 @@ import { path } from "../../helpers/routers";
 
 export const Navigation = () => {
   const { pathname } = useLocation();
+  const token: string = "";
+
+  const handelClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (token === "") e.preventDefault();
+  };
 
   return (
     <>
@@ -19,7 +25,7 @@ export const Navigation = () => {
               pathname === path.home
                 ? "text-[var(--nav-text-color-active)] opacity-[1]"
                 : "text-[var(--nav-text-color)]"
-            } text-[17px] opacity-[0.7] hover:opacity-[1]  hover:text-[var(--nav-text-color-active)] transition-colors duration-[350ms] dark:hover:text-[var(--nav-text-color-active-dark)] dark:text-[var(--nav-text-color-dark)]`
+            } text-[17px] opacity-[0.7] hover:opacity-[1]  hover:text-[var(--nav-text-color-active)] focus:opacity-[1]  focus:text-[var(--nav-text-color-active)] transition-colors duration-[350ms]`
           }
         >
           Home
@@ -31,34 +37,36 @@ export const Navigation = () => {
               isActive
                 ? "text-[var(--nav-text-color-active)] opacity-[1]"
                 : "text-[var(--nav-text-color)]"
-            } text-[17px] opacity-[0.7] hover:opacity-[1]  hover:text-[var(--nav-text-color-active)] transition-colors duration-[350ms] dark:hover:text-[var(--nav-text-color-active-dark)] dark:text-[var(--nav-text-color-dark)]`
+            } text-[17px] opacity-[0.7] hover:opacity-[1]  hover:text-[var(--nav-text-color-active)] focus:opacity-[1]  focus:text-[var(--nav-text-color-active)] transition-colors duration-[350ms]`
           }
         >
           About
         </NavLink>
         <NavLink
           to={path.wishlist}
+          onClick={handelClick}
           className={({ isActive }) =>
             `${
               isActive ? "text-[#ff0051]" : "text-[var(--main-text-color)]"
-            } w-[24px] h-[24px] transition-colors duration-[350ms] hover:text-[#ff0051] dark:text-[var(--main-text-color-dark)]`
+            } w-[24px] h-[24px] transition-colors duration-[350ms] hover:text-[#ff0051] focus:text-[#ff0051]`
           }
         >
           <IoIosHeartEmpty />
         </NavLink>
+        {!token}
         <NavLink
           to={path.cart}
-          className="  hover:scale-[1.5] w-[24px] h-[24px] transition-transform duration-[350ms] text-[var(--main-text-color)]  dark:text-[var(--main-text-color-dark)]"
+          className="  hover:scale-[1.5] focus:scale-[1.5] w-[24px] h-[24px] transition-transform duration-[350ms] text-[var(--main-text-color)]"
         >
           <PiShoppingCartLight />
         </NavLink>
+        <button
+          type="button"
+          className=" w-[24px] h-[24px]  hover:scale-[1.5] focus:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]"
+        >
+          <GoPerson />
+        </button>
       </nav>
-      <button
-        type="button"
-        className=" w-[24px] h-[24px]  hover:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]  dark:text-[var(--main-text-color-dark)]"
-      >
-        <GoPerson />
-      </button>
     </>
   );
 };

@@ -5,7 +5,7 @@ export default function NotFound() {
     <section>
       <div className="container flex py-[40px] items-center justify-between overflow-hidden">
         <div className=" flex flex-col gap-[10px]">
-          <h3 className="text-[#000] text-[38px] font-bold italic">
+          <h3 className="text-[var(--dark-text)] text-[38px] font-bold italic">
             Oops, page does not exist <span className=" not-italic">😶‍🌫️</span>
           </h3>
           <p className=" text-[20px]">
@@ -13,7 +13,7 @@ export default function NotFound() {
           </p>
           <button
             type="button"
-            className=" w-[200px] bg-[#522b5b] text-[#fff] h-[58px] mt-[8px] rounded-[8px]"
+            className=" w-[200px] bg-[var(--dark-purple)] text-[var(--second-text-color)] h-[58px] mt-[8px] rounded-[8px]"
           >
             Return to Home
           </button>

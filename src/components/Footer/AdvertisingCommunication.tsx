@@ -20,12 +20,12 @@ export const AdvertisingCommunication = () => {
 
   return (
     <div className=" flex flex-col border-[1px] border-[#ffffffad] rounded-2xl p-[20px]">
-      <h3 className="text-[#fff] text-start font-medium text-[14px]">
+      <h3 className="text-[var(--second-text-color)] text-start font-medium text-[14px]">
         Subscribe to discounts!
       </h3>
       <p className="text-[#fff9] text-start mb-[10px] text-[13px]">
         Don't worry, we don't spam{" "}
-        <span className=" text-[#fff] text-[14px]">🥰</span>
+        <span className=" text-[var(--second-text-color)] text-[14px]">🥰</span>
       </p>
       <form
         onSubmit={handleSubmit(onSubmitEmail)}
@@ -44,7 +44,7 @@ export const AdvertisingCommunication = () => {
         />
         <button
           type="submit"
-          className=" w-full bg-[#522b5b] text-[#fff] h-[48px] mt-[8px] rounded-[8px]"
+          className=" w-full bg-[var(--dark-purple)] text-[var(--second-text-color)] h-[48px] mt-[8px] rounded-[8px]"
         >
           Send
         </button>

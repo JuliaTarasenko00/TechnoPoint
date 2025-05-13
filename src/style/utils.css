@@ -1,25 +1,19 @@
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --main-background-color: #fff;
+  --component-background: #fff;
+  --dark-background: #000;
   --main-text-color: #333333;
   --second-text-color: #fff;
-  --nav-text-color: #666666;
-  --nav-text-color-active: #333333;
+  --dark-text: #000;
+
+  --grey-color: #cfcfcf;
+  --dark-purple: #522b5b;
 
   --search-input-bg: #e4e4e482;
   --search-input-text: #000;
 
-  /* dark mode */
-
-  --main-background-color-dark: #121212;
-  --main-text-color-dark: #e0e0e0;
-  --logo-color-dark: #fff;
-  --nav-text-color-dark: #c7c7c7;
-  --nav-text-color-active-dark: #c7c7c7;
-
-  --search-input-bg-dark: #2c2c2c;
-  --search-input-text-dark: #e0e0e0;
+  --nav-text-color: #666666;
+  --nav-text-color-active: #333333;
 }
 
 @utility container {

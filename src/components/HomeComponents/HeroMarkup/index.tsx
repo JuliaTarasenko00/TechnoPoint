@@ -11,7 +11,10 @@ export const HeroSection = () => {
   }, [isLoad]);
 
   return (
-    <section className="dark:bg-[linear-gradient(95deg,_#221a27_0%,_#20152c_100%)] bg-gradient-to-r from-[#190019] via-[#2b124c] to-[#522b5b]">
+    <section
+      id="hero"
+      className="bg-gradient-to-r from-[#190019] via-[#2b124c] to-[#522b5b]"
+    >
       <div className=" container h-[632px] overflow-hidden">
         <div className=" flex items-center justify-evenly gap-[50px]">
           <div
@@ -22,7 +25,7 @@ export const HeroSection = () => {
             <h1 className=" text-[25px] leading-[128%] text-[var(--second-text-color)] opacity-[0.4] font-semibold">
               Pro.Beyond.
             </h1>
-            <h3 className=" text-[var(--second-text-color)] dark:text-[var(--main-text-color-dark)] tracking-tight my-[24px] text-[96px] leading-[75%] font-extralight">
+            <h3 className=" text-[var(--second-text-color)] tracking-tight my-[24px] text-[96px] leading-[75%] font-extralight">
               IPhone 16 <span className=" font-semibold">Pro</span>
             </h3>
             <p className=" text-[#909090] text-[18px] leading-[133%]">
@@ -30,9 +33,9 @@ export const HeroSection = () => {
             </p>
             <button
               type="button"
-              className=" relative group cursor-pointer mt-[24px] text-[16px]  leading-[150%] font-medium dark:text-[var(--main-text-color-dark)] text-[var(--second-text-color)] py-[16px] px-[56px]"
+              className=" relative group cursor-pointer mt-[24px] text-[16px]  leading-[150%] font-medium text-[var(--second-text-color)] py-[16px] px-[56px]"
             >
-              <div className=" absolute top-0 left-0 w-full h-full transition-all duration-500 rounded-[6px] group-hover:scale-[1.03] border-[1px] border-[#fff]"></div>
+              <div className=" absolute top-0 left-0 w-full h-full transition-all duration-500 rounded-[6px] group-hover:scale-[1.03] group-focus:scale-[1.03] border-[1px] border-[#fff]"></div>
               Shop Now
             </button>
           </div>

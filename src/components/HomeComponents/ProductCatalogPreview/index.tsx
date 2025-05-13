@@ -44,13 +44,16 @@ export const ProductCatalogPreview = () => {
               onClick={() => setActiveTab(tab)}
               className="cursor-pointer relative font-medium text-[18px] text-center leading-[178%]"
               style={{
-                color: activeTab.label === tab.label ? "#000" : "#8b8b8b",
+                color:
+                  activeTab.label === tab.label
+                    ? "var(--dark-text)"
+                    : "#8b8b8b",
               }}
             >
               {tab.label}
               {activeTab.label === tab.label && (
                 <motion.div
-                  className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[#000] rounded-[6px]"
+                  className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[var(--dark-background)] rounded-[6px]"
                   layoutId="underline"
                 />
               )}

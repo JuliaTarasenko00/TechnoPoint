@@ -34,7 +34,8 @@ const styleList: Array<TStyleList> = [
   {
     position: "",
     bg: "bg-[#353535]",
-    style: " font-light text-[29px] text-end text-[#fff]  pl-[10%]",
+    style:
+      " font-light text-[29px] text-end text-[var(--second-text-color)]  pl-[10%]",
     styleImg: "left-[-10%] w-[150px] h-[100px]",
   },
   {
@@ -76,7 +77,7 @@ export const TechGallery: React.FC = () => {
                 className={`${position}  cursor-pointer rounded-2xl group relative w-full shadow-md min-h-[220px] `}
               >
                 <div
-                  className={`${bg} absolute w-full rounded-2xl h-full group-hover:scale-[1.015] transition-transform duration-500`}
+                  className={`${bg} absolute w-full rounded-2xl h-full group-hover:scale-[1.015] group-focus:scale-[1.015] transition-transform duration-500`}
                 ></div>
                 <div
                   className={`relative z-10 w-full group h-full justify-end overflow-hidden text-balance flex items-center px-[36px] ${style}`}
@@ -86,9 +87,9 @@ export const TechGallery: React.FC = () => {
                     alt={name}
                     width={260}
                     height={100}
-                    className={`absolute object-fill object-center group-hover:scale-[1.05] pointer-events-none transition-transform duration-700 ${styleImg}`}
+                    className={`absolute object-fill object-center group-hover:scale-[1.05] group-focus:scale-[1.05] pointer-events-none transition-transform duration-700 ${styleImg}`}
                   />
-                  <div className="z-10 dark:text-white">
+                  <div className="z-10">
                     <h2 className=" leading-[87%] mb-[0.3em]">
                       {firstPart}{" "}
                       <span className=" font-medium">{lastWord}</span>
@@ -97,7 +98,7 @@ export const TechGallery: React.FC = () => {
                       {description}
                     </p>
                     {lastItem && (
-                      <button className="text-[#353535] mt-[16px] px-[56px] py-[16px] text-[16px] leading-[150%] border-1 rounded-[6px] font-medium border-[#353535] transition-color ease-in-out duration-500 cursor-pointer hover:bg-[#522b5b] hover:border-transparent hover:text-[#fff]">
+                      <button className="text-[#353535] mt-[16px] px-[56px] py-[16px] text-[16px] leading-[150%] border-1 rounded-[6px] font-medium border-[#353535] transition-color ease-in-out duration-500 cursor-pointer hover:bg-[var(--dark-purple)] hover:border-transparent hover:text-[var(--second-text-color)] focus:bg-[var(--dark-purple)] focus:border-transparent focus:text-[var(--second-text-color)]">
                         Shop now
                       </button>
                     )}

@@ -6,7 +6,7 @@ export const PopularBrands = () => {
   return (
     <section className="">
       <div className="container px-[60px]">
-        <h3 className=" text-[24px] font-medium leading-[133%] text-[#000]">
+        <h3 className=" text-[24px] font-medium leading-[133%] text-[var(--dark-text)]">
           Popular Brands
         </h3>
         <ul className="flex gap-[16px] items-center mt-[36px] justify-center flex-wrap">

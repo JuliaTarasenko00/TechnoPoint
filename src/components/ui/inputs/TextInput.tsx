@@ -11,7 +11,7 @@ export const TextInput: FC<TextInputProps> = forwardRef(
         <input
           {...rest}
           type="text"
-          className=" p-[16px] text-[var(--search-input-text)] bg-[#ffff]  dark:bg-[var(--search-input-bg-dark)] dark:text-[var(--search-input-text-dark)] rounded-[8px] w-full h-[48px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] "
+          className=" p-[16px] text-[var(--search-input-text)] bg-[var(--component-background)] rounded-[8px] w-full h-[48px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] "
           ref={_ref}
         />
         {errorMessage && <p>{errorMessage}</p>}
