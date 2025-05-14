@@ -25,7 +25,7 @@ export const MarkupProduct: FC<MarkupProductProps> = ({ products }) => {
               <IoIosHeartEmpty />
             </button>
             {!token && (
-              <div className="absolute w-[220px] right-0 bg-[#000000b0] pointer-events-none transition-opacity duration-500 z-20 p-[3px] rounded-[3px] opacity-0 peer-hover:opacity-100">
+              <div className="absolute w-[235px] right-0 bg-[#000000b0] pointer-events-none transition-opacity duration-500 z-20 px-[15px] py-[5px] rounded-[3px] opacity-0 peer-hover:opacity-100">
                 <p className="text-[var(--second-text-color)]">
                   Please log in to add the item to your wishlist
                 </p>

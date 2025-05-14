@@ -1,13 +1,8 @@
 @import "tailwindcss";
 @import "./utils.css";
 
-html.dark {
-  color-scheme: dark;
-}
-
-html.dark body {
-  background-color: var(--main-background-color-dark);
-  color: var(--main-text-color-dark);
+html {
+  scrollbar-gutter: stable;
 }
 
 body {

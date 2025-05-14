@@ -6,13 +6,20 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import { GoPerson } from "react-icons/go";
 
 import { path } from "../../helpers/routers";
+import { useModalProvider } from "../../helpers/context/ModalProvider/useModalProvider";
 
 export const Navigation = () => {
   const { pathname } = useLocation();
+  const { openModal } = useModalProvider();
+
   const token: string = "";
 
   const handelClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (token === "") e.preventDefault();
+    if (token === "") {
+      e.preventDefault();
+
+      return openModal(<p>You need to register</p>);
+    }
   };
 
   return (
@@ -53,7 +60,6 @@ export const Navigation = () => {
         >
           <IoIosHeartEmpty />
         </NavLink>
-        {!token}
         <NavLink
           to={path.cart}
           className="  hover:scale-[1.5] focus:scale-[1.5] w-[24px] h-[24px] transition-transform duration-[350ms] text-[var(--main-text-color)]"
@@ -62,6 +68,7 @@ export const Navigation = () => {
         </NavLink>
         <button
           type="button"
+          onClick={() => openModal(<p>Log in or Register</p>)}
           className=" w-[24px] h-[24px]  hover:scale-[1.5] focus:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]"
         >
           <GoPerson />

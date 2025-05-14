@@ -1,5 +1,6 @@
 import React from "react";
+import { ModalProvider } from "./ModalProvider/ModalProvider";
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>;
+  return <ModalProvider>{children}</ModalProvider>;
 };
