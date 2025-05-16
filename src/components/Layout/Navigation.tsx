@@ -7,6 +7,7 @@ import { GoPerson } from "react-icons/go";
 
 import { path } from "../../helpers/routers";
 import { useModalProvider } from "../../helpers/context/ModalProvider/useModalProvider";
+import { Authorization } from "../Authorization";
 
 export const Navigation = () => {
   const { pathname } = useLocation();
@@ -18,7 +19,7 @@ export const Navigation = () => {
     if (token === "") {
       e.preventDefault();
 
-      return openModal(<p>You need to register</p>);
+      return openModal(<Authorization />);
     }
   };
 
@@ -68,8 +69,8 @@ export const Navigation = () => {
         </NavLink>
         <button
           type="button"
-          onClick={() => openModal(<p>Log in or Register</p>)}
-          className=" w-[24px] h-[24px]  hover:scale-[1.5] focus:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]"
+          onClick={() => openModal(<Authorization />)}
+          className=" cursor-pointer w-[24px] h-[24px]  hover:scale-[1.5] focus:scale-[1.5] transition-transform duration-[350ms] text-[var(--main-text-color)]"
         >
           <GoPerson />
         </button>

@@ -52,7 +52,7 @@ export const MarkupProduct: FC<MarkupProductProps> = ({ products }) => {
             </p>
             <button
               type="button"
-              className="text-[var(--second-text-color)] w-[188px] h-[48px] font-medium text-[14px] leading-[171%] bg-[var(--dark-background)] rounded-[8px] hover:bg-[var(--dark-purple)] focus:bg-[var(--dark-purple)] transition-color duration-300"
+              className="text-[var(--second-text-color)] cursor-pointer w-[188px] h-[48px] font-medium text-[14px] leading-[171%] bg-[var(--dark-background)] rounded-[8px] hover:bg-[var(--dark-purple)] focus:bg-[var(--dark-purple)] transition-color duration-300"
             >
               Buy Now
             </button>

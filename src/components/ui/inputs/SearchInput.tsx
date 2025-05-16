@@ -2,6 +2,7 @@ import { FC, InputHTMLAttributes, useEffect, useRef, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 import { categories } from "../../../helpers/temporaryData/categories";
+import { ErrorMessage } from "../ErrorMessage";
 
 interface PropsSearchInput extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
@@ -51,7 +52,7 @@ export const SearchInput: FC<PropsSearchInput> = ({
         className=" py-[16px] text-[var(--search-input-text)] bg-[var(--search-input-bg)] rounded-[8px] w-[372px] h-[56px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] px-[48px]"
         ref={inputRef}
       />
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

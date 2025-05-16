@@ -39,9 +39,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
         onClose={closeModal}
         onClick={clickOutside}
         id="dialog"
-        className=" m-auto rounded-xl bg-white p-6 shadow-3xl  backdrop:backdrop-blur-xs  transition-opacity duration-500"
+        className=" m-auto rounded-xl bg-[#ffffffb2] border-[var(--dark-purple)] border-[1px] shadow-3xl  backdrop:backdrop-blur-xs  transition-opacity duration-500"
       >
-        {content}
+        <div className="w-full h-full p-[30px]"> {content}</div>
       </dialog>
     </ModalContext.Provider>
   );

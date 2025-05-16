@@ -44,7 +44,7 @@ export const AdvertisingCommunication = () => {
         />
         <button
           type="submit"
-          className=" w-full bg-[var(--dark-purple)] text-[var(--second-text-color)] h-[48px] mt-[8px] rounded-[8px]"
+          className=" w-full cursor-pointer bg-[var(--dark-purple)] text-[var(--second-text-color)] h-[48px] mt-[8px] rounded-[8px]"
         >
           Send
         </button>
