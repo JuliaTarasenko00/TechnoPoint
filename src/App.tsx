@@ -7,6 +7,8 @@ const Home = lazy(() => import("./pages/Home/index"));
 const About = lazy(() => import("./pages/About/index"));
 const Wishlist = lazy(() => import("./pages/Wishlist/index"));
 const BasketCart = lazy(() => import("./pages/BasketCart/index"));
+const Product = lazy(() => import("./pages/Product/index"));
+
 const NotFound = lazy(() => import("./pages/NotFound/index"));
 
 const router = createBrowserRouter([
@@ -18,6 +20,7 @@ const router = createBrowserRouter([
       { path: path.about, Component: About },
       { path: path.wishlist, Component: Wishlist },
       { path: path.cart, Component: BasketCart },
+      { path: path.product, Component: Product },
       { path: "*", Component: NotFound },
     ],
   },

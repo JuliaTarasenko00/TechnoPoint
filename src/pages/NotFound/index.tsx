@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import notFound from "../../assets/image/not_found.webp";
+import { path } from "../../helpers/routers";
 
 export default function NotFound() {
+  const navigate = useNavigate();
   return (
     <section>
       <div className="container flex py-[40px] items-center justify-between overflow-hidden">
@@ -13,6 +16,7 @@ export default function NotFound() {
           </p>
           <button
             type="button"
+            onClick={() => navigate(path.home)}
             className=" w-[200px] bg-[var(--dark-purple)] text-[var(--second-text-color)] h-[58px] mt-[8px] rounded-[8px]"
           >
             Return to Home

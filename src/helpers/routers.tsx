@@ -1,7 +1,10 @@
+const base = "/TechnoPoint";
+
 export const path = {
-  home: "/TechnoPoint",
-  about: "about",
-  wishlist: "wishlist",
-  cart: "cart",
-  auth: "auth",
+  home: base,
+  about: `${base}/about`,
+  wishlist: `${base}/wishlist`,
+  cart: `${base}/cart`,
+  product: `${base}/product`,
+  auth: `${base}/auth`,
 };
