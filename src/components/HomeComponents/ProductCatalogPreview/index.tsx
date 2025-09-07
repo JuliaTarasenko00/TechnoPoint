@@ -1,8 +1,8 @@
-import { useState, useMemo } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState, useMemo } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import { products } from "../../../helpers/temporaryData/products";
-import { MarkupProduct } from "../../MarkupProduct/MarkupProduct";
+import { products } from '../../../helpers/temporaryData/products';
+import { MarkupProduct } from '../../MarkupProduct/MarkupProduct';
 
 interface Product {
   _id: string;
@@ -17,9 +17,9 @@ interface Tab {
 }
 
 const tabs: Tab[] = [
-  { label: "New Arrival", data: products },
-  { label: "Bestseller", data: [] },
-  { label: "Featured Products", data: [] },
+  { label: 'New Arrival', data: products },
+  { label: 'Bestseller', data: [] },
+  { label: 'Featured Products', data: [] },
 ];
 
 export const ProductCatalogPreview = () => {
@@ -36,24 +36,24 @@ export const ProductCatalogPreview = () => {
   return (
     <section className="py-[56px]">
       <div className="container">
-        <ul className="flex items-center  mb-[32px]  gap-[32px]">
+        <ul className="mb-[32px] flex items-center gap-[32px]">
           {tabs.map((tab) => (
             <motion.li
               key={tab.label}
               initial={false}
               onClick={() => setActiveTab(tab)}
-              className="cursor-pointer relative font-medium text-[18px] text-center leading-[178%]"
+              className="relative cursor-pointer text-center text-[18px] leading-[178%] font-medium"
               style={{
                 color:
                   activeTab.label === tab.label
-                    ? "var(--dark-text)"
-                    : "#8b8b8b",
+                    ? 'var(--dark-text)'
+                    : '#8b8b8b',
               }}
             >
               {tab.label}
               {activeTab.label === tab.label && (
                 <motion.div
-                  className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[var(--dark-background)] rounded-[6px]"
+                  className="absolute right-0 bottom-[-1px] left-0 h-[2px] rounded-[6px] bg-[var(--dark-background)]"
                   layoutId="underline"
                 />
               )}

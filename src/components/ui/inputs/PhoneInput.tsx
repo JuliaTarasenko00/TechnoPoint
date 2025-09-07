@@ -1,9 +1,9 @@
 //@ts-ignore
 
-import { FC, ForwardedRef, forwardRef, InputHTMLAttributes } from "react";
-import { IMaskInput, IMaskMixin } from "react-imask";
-import { FiX } from "react-icons/fi";
-import { ErrorMessage } from "../ErrorMessage";
+import { FC, ForwardedRef, forwardRef, InputHTMLAttributes } from 'react';
+import { IMaskInput, IMaskMixin } from 'react-imask';
+import { FiX } from 'react-icons/fi';
+import { ErrorMessage } from '../ErrorMessage';
 
 interface PhoneInputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
@@ -13,14 +13,14 @@ interface PhoneInputProps extends InputHTMLAttributes<HTMLInputElement> {
 const MaskInput = IMaskMixin(({ errorMessage, inputRef, ...props }) => (
   <IMaskInput
     {...props}
-    mask={"+{38\\0} #0 000 0000"}
+    mask={'+{38\\0} #0 000 0000'}
     ref={inputRef}
-    definitions={{ "#": /[5,6,7,8,9]/ }}
+    definitions={{ '#': /[5,6,7,8,9]/ }}
     className={`peer ${
       errorMessage
-        ? " border-[var(--error-color)] focus:border-[var(--error-color)"
-        : "border-transparent focus:border-[var(--dark-purple)]"
-    } border-[1px] bg-[var(--component-background)] p-[10px_13px]  block w-full rounded-[22px] `}
+        ? 'focus:border-[var(--error-color) border-[var(--error-color)]'
+        : 'border-transparent focus:border-[var(--dark-purple)]'
+    } block w-full rounded-[22px] border-[1px] bg-[var(--component-background)] p-[10px_13px]`}
   />
 ));
 
@@ -28,21 +28,21 @@ export const PhoneInput: FC<PhoneInputProps> = forwardRef(
   ({ errorMessage, reset, ...rest }, _ref: ForwardedRef<HTMLInputElement>) => {
     return (
       <>
-        <div className=" relative">
+        <div className="relative">
           <MaskInput {...rest} inputRef={_ref} errorMessage={errorMessage} />
           <button
             onClick={() => reset(rest.name as string)}
             type="reset"
-            className="peer-focus:opacity-[1] peer-focus:pointer-events-auto pointer-events-none peer-focus:cursor-pointer opacity-0  absolute top-[50%] right-[16px] translate-y-[-50%] transition-opacity"
+            className="pointer-events-none absolute top-[50%] right-[16px] translate-y-[-50%] opacity-0 transition-opacity peer-focus:pointer-events-auto peer-focus:cursor-pointer peer-focus:opacity-[1]"
           >
-            <FiX className=" w-[24px] h-[24px] pl-[7px] border-l-[1px] border-l-[#989898]" />
+            <FiX className="h-[24px] w-[24px] border-l-[1px] border-l-[#989898] pl-[7px]" />
           </button>
         </div>
 
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </>
     );
-  }
+  },
 );
 
-PhoneInput.displayName = "PhoneInput";
+PhoneInput.displayName = 'PhoneInput';

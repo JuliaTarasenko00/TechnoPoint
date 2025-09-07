@@ -1,8 +1,8 @@
-import { FC, InputHTMLAttributes, useEffect, useRef, useState } from "react";
-import { TypeAnimation } from "react-type-animation";
+import { FC, InputHTMLAttributes, useEffect, useRef, useState } from 'react';
+import { TypeAnimation } from 'react-type-animation';
 
-import { categories } from "../../../helpers/temporaryData/categories";
-import { ErrorMessage } from "../ErrorMessage";
+import { categories } from '../../../helpers/temporaryData/categories';
+import { ErrorMessage } from '../ErrorMessage';
 
 interface PropsSearchInput extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
@@ -26,20 +26,20 @@ export const SearchInput: FC<PropsSearchInput> = ({
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
   return (
-    <div className=" relative">
-      {!isActive && rest.value === "" && (
+    <div className="relative">
+      {!isActive && rest.value === '' && (
         <TypeAnimation
-          sequence={[...nameCategory, ""]}
+          sequence={[...nameCategory, '']}
           repeat={Infinity}
-          style={{ fontSize: "16px", display: "inline-block" }}
-          className=" absolute top-[50%] translate-y-[-50%] left-[46px] pointer-events-none text-[#989898] "
+          style={{ fontSize: '16px', display: 'inline-block' }}
+          className="pointer-events-none absolute top-[50%] left-[46px] translate-y-[-50%] text-[#989898]"
         />
       )}
       <input
@@ -49,7 +49,7 @@ export const SearchInput: FC<PropsSearchInput> = ({
         onFocus={() => {
           setIsActive(true);
         }}
-        className=" py-[16px] text-[var(--search-input-text)] bg-[var(--search-input-bg)] rounded-[8px] w-[372px] h-[56px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] px-[48px]"
+        className="h-[56px] w-[372px] rounded-[8px] bg-[var(--search-input-bg)] px-[48px] py-[16px] text-[var(--search-input-text)] outline-none placeholder:text-[16px] placeholder:text-[#989898]"
         ref={inputRef}
       />
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}

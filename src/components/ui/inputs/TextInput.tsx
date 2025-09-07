@@ -1,5 +1,5 @@
-import { FC, ForwardedRef, forwardRef, InputHTMLAttributes } from "react";
-import { ErrorMessage } from "../ErrorMessage";
+import { FC, ForwardedRef, forwardRef, InputHTMLAttributes } from 'react';
+import { ErrorMessage } from '../ErrorMessage';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string;
@@ -8,17 +8,17 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const TextInput: FC<TextInputProps> = forwardRef(
   ({ errorMessage, ...rest }, _ref: ForwardedRef<HTMLInputElement>) => {
     return (
-      <div className=" relative">
+      <div className="relative">
         <input
           {...rest}
           type="text"
-          className=" p-[16px] text-[var(--search-input-text)] bg-[var(--component-background)] rounded-[8px] w-full h-[48px] outline-none  placeholder:text-[#989898]  placeholder:text-[16px] "
+          className="h-[48px] w-full rounded-[8px] bg-[var(--component-background)] p-[16px] text-[var(--search-input-text)] outline-none placeholder:text-[16px] placeholder:text-[#989898]"
           ref={_ref}
         />
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </div>
     );
-  }
+  },
 );
 
-TextInput.displayName = "TextInput";
+TextInput.displayName = 'TextInput';

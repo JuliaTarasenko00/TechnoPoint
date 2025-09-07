@@ -1,5 +1,5 @@
-import { FC, MouseEvent, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { FC, MouseEvent, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface ZoomImageProps {
   src: string;
@@ -7,8 +7,8 @@ interface ZoomImageProps {
   zoom?: number;
 }
 
-export const ZoomImage: FC<ZoomImageProps> = ({ src, alt, zoom = 2.8 }) => {
-  const [origin, setOrigin] = useState<string>("50% 50%");
+export const ZoomImage: FC<ZoomImageProps> = ({ src, alt, zoom = 2.9 }) => {
+  const [origin, setOrigin] = useState<string>('50% 50%');
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handleMousePosition = (e: MouseEvent<HTMLDivElement>) => {
@@ -22,7 +22,7 @@ export const ZoomImage: FC<ZoomImageProps> = ({ src, alt, zoom = 2.8 }) => {
   };
 
   const handleMouseLeave = () => {
-    setOrigin("50% 50%");
+    setOrigin('50% 50%');
   };
 
   return (
@@ -30,7 +30,7 @@ export const ZoomImage: FC<ZoomImageProps> = ({ src, alt, zoom = 2.8 }) => {
       ref={containerRef}
       onMouseMove={handleMousePosition}
       onMouseLeave={handleMouseLeave}
-      className="min-w-[463px] p-[50px] max-w-[413px] h-[516px] overflow-hidden flex justify-center items-center "
+      className="flex h-[516px] max-w-[413px] min-w-[463px] items-center justify-center overflow-hidden p-[30px]"
     >
       <motion.img
         src={src}
@@ -42,7 +42,7 @@ export const ZoomImage: FC<ZoomImageProps> = ({ src, alt, zoom = 2.8 }) => {
           transformOrigin: origin,
         }}
         whileHover={{ scale: zoom }}
-        className="max-w-full max-h-full w-full object-contain cursor-zoom-in transition-transform duration-500"
+        className="max-h-full w-full max-w-full cursor-zoom-in object-contain transition-transform duration-500"
       />
     </div>
   );

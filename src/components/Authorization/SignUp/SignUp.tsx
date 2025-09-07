@@ -1,14 +1,14 @@
-import { Controller, useForm } from "react-hook-form";
-import { registerSchema, TRegisterSchema } from "./validateRegisterValue";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { PhoneInput } from "../../ui/inputs/PhoneInput";
-import { EmailInput } from "../../ui/inputs/EmailInput";
-import { UserNameInput } from "../../ui/inputs/UserNameInput";
+import { Controller, useForm } from 'react-hook-form';
+import { registerSchema, TRegisterSchema } from './validateRegisterValue';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { PhoneInput } from '../../ui/inputs/PhoneInput';
+import { EmailInput } from '../../ui/inputs/EmailInput';
+import { UserNameInput } from '../../ui/inputs/UserNameInput';
 
 const defaultValues: TRegisterSchema = {
-  name: "",
-  phone: "",
-  email: "",
+  name: '',
+  phone: '',
+  email: '',
 };
 
 export const SignUp = () => {
@@ -19,22 +19,22 @@ export const SignUp = () => {
     formState: { errors, isValid },
   } = useForm<TRegisterSchema>({
     defaultValues,
-    mode: "onChange",
+    mode: 'onChange',
     resolver: yupResolver(registerSchema),
   });
 
   const onSubmit = (value: TRegisterSchema) => {
-    console.log("value: ", value);
+    console.log('value: ', value);
   };
 
   return (
     <>
-      <h2 className=" text-center text-[21px] font-semibold mb-[24px] text-[var(--dark-text)]">
+      <h2 className="mb-[24px] text-center text-[21px] font-semibold text-[var(--dark-text)]">
         Register
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[312px] flex flex-col gap-[10px]"
+        className="flex w-[312px] flex-col gap-[10px]"
       >
         <Controller
           name="name"
@@ -75,7 +75,7 @@ export const SignUp = () => {
         <button
           disabled={!isValid}
           type="submit"
-          className=" disabled:opacity-[.4] disabled:cursor-not-allowed cursor-pointer bg-[var(--dark-purple)] w-full p-[10px_13px] rounded-[22px] text-[var(--second-text-color)] text-[14px] mt-[24px]"
+          className="mt-[24px] w-full cursor-pointer rounded-[22px] bg-[var(--dark-purple)] p-[10px_13px] text-[14px] text-[var(--second-text-color)] disabled:cursor-not-allowed disabled:opacity-[.4]"
         >
           Next
         </button>

@@ -1,36 +1,36 @@
-import { ElementType } from "react";
-import { CgSmartHomeRefrigerator } from "react-icons/cg";
+import { ElementType } from 'react';
+import { CgSmartHomeRefrigerator } from 'react-icons/cg';
 import {
   IoGameControllerOutline,
   IoHeadsetOutline,
   IoLaptopOutline,
   IoPhonePortraitOutline,
   IoWatchOutline,
-} from "react-icons/io5";
+} from 'react-icons/io5';
 
 export const categories: Array<{ category: string; img: ElementType }> = [
   {
-    category: "Phones",
+    category: 'Phones',
     img: IoPhonePortraitOutline,
   },
   {
-    category: "Smart Watches",
+    category: 'Smart Watches',
     img: IoWatchOutline,
   },
   {
-    category: "Headphones",
+    category: 'Headphones',
     img: IoHeadsetOutline,
   },
   {
-    category: "Laptops",
+    category: 'Laptops',
     img: IoLaptopOutline,
   },
   {
-    category: "Gaming",
+    category: 'Gaming',
     img: IoGameControllerOutline,
   },
   {
-    category: "Refrigerators",
+    category: 'Refrigerators',
     img: CgSmartHomeRefrigerator,
   },
 ];

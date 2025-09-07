@@ -1,15 +1,15 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { popularBrands } from "../../../helpers/temporaryData/popularBrands";
+import { popularBrands } from '../../../helpers/temporaryData/popularBrands';
 
 export const PopularBrands = () => {
   return (
     <section className="">
       <div className="container px-[60px]">
-        <h3 className=" text-[24px] font-medium leading-[133%] text-[var(--dark-text)]">
+        <h3 className="text-[24px] leading-[133%] font-medium text-[var(--dark-text)]">
           Popular Brands
         </h3>
-        <ul className="flex gap-[16px] items-center mt-[36px] justify-center flex-wrap">
+        <ul className="mt-[36px] flex flex-wrap items-center justify-center gap-[16px]">
           {popularBrands.map(({ img }) => (
             <motion.li
               initial={{ opacity: 0, scale: 0.9 }}
@@ -18,14 +18,14 @@ export const PopularBrands = () => {
                 duration: 0.4,
               }}
               key={img}
-              className=" w-[250px] bg-[#f9f9f9] h-[100px] p-[20px] rounded-[13px] cursor-pointer"
+              className="h-[100px] w-[250px] cursor-pointer rounded-[13px] bg-[#f9f9f9] p-[20px]"
             >
               <img
                 src={img}
                 alt=" "
                 width={130}
                 height={100}
-                className=" w-full h-full object-contain"
+                className="h-full w-full object-contain"
               />
             </motion.li>
           ))}

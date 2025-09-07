@@ -1,6 +1,6 @@
 export default function BasketCart() {
   return (
-    <section className=" container">
+    <section className="container">
       <p> BasketCart</p>
     </section>
   );

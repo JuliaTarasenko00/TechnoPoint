@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { SignIn } from "./SignIn/SignIn";
-import { SignUp } from "./SignUp/SignUp";
+import { SignIn } from './SignIn/SignIn';
+import { SignUp } from './SignUp/SignUp';
 
 export const Authorization = () => {
   const [hasAccount, setHasAccount] = useState<boolean>(true);
@@ -15,11 +15,11 @@ export const Authorization = () => {
       {hasAccount ? (
         <>
           <SignIn />
-          <p className="text-[#858383] text-center my-[24px]">or</p>
+          <p className="my-[24px] text-center text-[#858383]">or</p>
           <button
             type="button"
             onClick={handleChangeContent}
-            className=" text-[#3b6d9a] cursor-pointer text-[16px] hover:text-[var(--dark-purple)] transition-colors duration-500 w-max m-auto block"
+            className="m-auto block w-max cursor-pointer text-[16px] text-[#3b6d9a] transition-colors duration-500 hover:text-[var(--dark-purple)]"
           >
             Register
           </button>
@@ -27,12 +27,12 @@ export const Authorization = () => {
       ) : (
         <>
           <SignUp />
-          <p className="text-[#858383] text-center my-[24px]">or</p>
+          <p className="my-[24px] text-center text-[#858383]">or</p>
 
           <button
             type="button"
             onClick={handleChangeContent}
-            className=" text-[#3b6d9a] cursor-pointer text-[16px] hover:text-[var(--dark-purple)] transition-colors duration-500 w-max m-auto block"
+            className="m-auto block w-max cursor-pointer text-[16px] text-[#3b6d9a] transition-colors duration-500 hover:text-[var(--dark-purple)]"
           >
             Login
           </button>

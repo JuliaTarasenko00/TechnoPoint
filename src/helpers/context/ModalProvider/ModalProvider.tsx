@@ -1,4 +1,4 @@
-import { createContext, MouseEvent, ReactNode, useRef, useState } from "react";
+import { createContext, MouseEvent, ReactNode, useRef, useState } from 'react';
 
 export type ModalContextType = {
   openModal: (content: ReactNode) => void;
@@ -6,7 +6,7 @@ export type ModalContextType = {
 };
 
 export const ModalContext = createContext<ModalContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
@@ -15,12 +15,12 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 
   const openModal = (content: ReactNode) => {
     setContent(content);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
     modalRef.current?.showModal();
   };
 
   const closeModal = () => {
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = 'auto';
 
     modalRef.current?.close();
   };
@@ -39,9 +39,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
         onClose={closeModal}
         onClick={clickOutside}
         id="dialog"
-        className=" m-auto rounded-xl bg-[#ffffffb2] border-[var(--dark-purple)] border-[1px] shadow-3xl  backdrop:backdrop-blur-xs  transition-opacity duration-500"
+        className="shadow-3xl m-auto rounded-xl border-[1px] border-[var(--dark-purple)] bg-[#ffffffb2] transition-opacity duration-500 backdrop:backdrop-blur-xs"
       >
-        <div className="w-full h-full p-[30px]"> {content}</div>
+        <div className="h-full w-full p-[30px]"> {content}</div>
       </dialog>
     </ModalContext.Provider>
   );

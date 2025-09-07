@@ -1,4 +1,4 @@
-const base = "/TechnoPoint";
+const base = '/TechnoPoint';
 
 export const path = {
   home: base,

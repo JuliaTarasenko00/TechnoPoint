@@ -1,5 +1,5 @@
-import * as Yup from "yup";
-import { phonePattern } from "../../../helpers/patterns";
+import * as Yup from 'yup';
+import { phonePattern } from '../../../helpers/patterns';
 
 export const validatePhone = Yup.object().shape({
   phone: Yup.string()

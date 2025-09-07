@@ -30,7 +30,9 @@ dialog:open {
 dialog {
   opacity: 0;
   outline: none;
-  transition: opacity 0.3s ease-out, overlay 0.3s ease-out allow-discrete,
+  transition:
+    opacity 0.3s ease-out,
+    overlay 0.3s ease-out allow-discrete,
     display 0.3s ease-out allow-discrete;
 }
 
@@ -41,7 +43,9 @@ dialog {
 }
 
 dialog::backdrop {
-  transition: display 0.3s allow-discrete, overlay 0.3s allow-discrete,
+  transition:
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete,
     background-color 0.3s;
 }
 

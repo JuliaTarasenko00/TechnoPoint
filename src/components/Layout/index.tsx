@@ -1,25 +1,25 @@
-import { Suspense } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Suspense } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
-import { AiOutlineAppstoreAdd } from "react-icons/ai";
+import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 
-import { path } from "../../helpers/routers";
-import { SearchForm } from "./SearchForm";
-import { Navigation } from "./Navigation";
-import { Footer } from "../Footer/Footer";
+import { path } from '../../helpers/routers';
+import { SearchForm } from './SearchForm';
+import { Navigation } from './Navigation';
+import { Footer } from '../Footer/Footer';
 
 export default function Layout() {
   return (
     <>
-      <header className=" sticky z-50 shadow-[0px_-6px_32px_2px_rgba(0,0,0,0.4)] bg-[var(--component-background)] top-0 pt-[25px] pb-[15px]">
-        <div className="container px-[130px] flex justify-between items-center">
+      <header className="sticky top-0 z-50 bg-[var(--component-background)] pt-[25px] pb-[15px] shadow-[0px_-6px_32px_2px_rgba(0,0,0,0.4)]">
+        <div className="container flex items-center justify-between px-[130px]">
           <Link
             to={path.home}
-            className="text-[25px] text-[var(--main-text-color)] font-bold"
+            className="text-[25px] font-bold text-[var(--main-text-color)]"
           >
             TechnoPoint
           </Link>
-          <p className=" text-[var(--main-text-color)] text-[18px] flex items-center gap-[4px]">
+          <p className="flex items-center gap-[4px] text-[18px] text-[var(--main-text-color)]">
             <span>
               <AiOutlineAppstoreAdd />
             </span>
@@ -34,7 +34,7 @@ export default function Layout() {
           <Outlet />
         </Suspense>
       </main>
-      <footer className=" bg-[var(--dark-background)] pb-[84px]">
+      <footer className="bg-[var(--dark-background)] pb-[84px]">
         <Footer />
       </footer>
     </>

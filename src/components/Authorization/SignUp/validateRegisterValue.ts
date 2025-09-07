@@ -1,5 +1,5 @@
-import * as Yup from "yup";
-import { emailPattern, phonePattern } from "../../../helpers/patterns";
+import * as Yup from 'yup';
+import { emailPattern, phonePattern } from '../../../helpers/patterns';
 
 export const registerSchema = Yup.object().shape({
   name: Yup.string().min(3).required(),

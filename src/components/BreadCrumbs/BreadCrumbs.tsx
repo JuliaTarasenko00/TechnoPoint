@@ -1,9 +1,9 @@
-const mainStyle = "cursor-pointer text-[#a4a4a4] text-[16px] leading-[90%]";
+const mainStyle = 'cursor-pointer text-[#a4a4a4] text-[16px] leading-[90%]';
 
 export const BreadCrumbs = ({ pathnames }: { pathnames: Array<string> }) => {
   return (
-    <div className=" container px-[60px] py-[25px]">
-      <ul className=" flex items-center gap-1.5">
+    <div className="container px-[60px] py-[25px]">
+      <ul className="flex items-center gap-1.5">
         {pathnames.map((pathname, index) => {
           const lastElement = index === pathnames.length - 1;
 
@@ -11,11 +11,11 @@ export const BreadCrumbs = ({ pathnames }: { pathnames: Array<string> }) => {
             <li key={pathname}>
               {!lastElement ? (
                 <p className={`${mainStyle}`}>
-                  {pathname} {">"}
+                  {pathname} {'>'}
                 </p>
               ) : (
                 <p
-                  className={`${mainStyle} text-[var(--dark-text)] cursor-text`}
+                  className={`${mainStyle} cursor-text text-[var(--dark-text)]`}
                 >
                   {pathname}
                 </p>
